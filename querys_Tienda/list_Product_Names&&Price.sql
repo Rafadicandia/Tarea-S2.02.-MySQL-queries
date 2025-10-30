@@ -1,1 +1,0 @@
-select nombre, precio from producto;
