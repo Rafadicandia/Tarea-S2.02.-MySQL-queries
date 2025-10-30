@@ -23,10 +23,14 @@ select d.nombre as departamento, p.nombre as Nombre_Profesor, a.nombre as asigna
 -- [ ] Devuelve un listado con todos los alumnos que se han matriculado en alguna asignatura durante el curso escolar 2018/2019.
 select p.nombre as nombre, p.apellido1 as apellido, a.nombre as asignatura, c.anyo_inicio, c.anyo_fin from persona p, asignatura a, curso_escolar c join alumno_se_matricula_asignatura as m where m.id_alumno = p.id and a.id = m.id_asignatura and c.id=5;
 
--- [ ] Resuelve las 6 siguientes consultas utilizando las cláusulas LEFT JOIN y RIGHT JOIN.
+-- [!!!] Resuelve las 6 siguientes consultas utilizando las cláusulas LEFT JOIN y RIGHT JOIN.
+
 -- [ ] Devuelve un listado con los nombres de todos los profesores/as y los departamentos que tienen vinculados. El listado también debe mostrar aquellos profesores/as que no tienen ningún departamento asociado. El listado debe devolver cuatro columnas, nombre del departamento, primer apellido, segundo apellido y nombre del profesor/a. El resultado estará ordenado alfabéticamente de menor a mayor por el nombre del departamento, apellidos y nombre.
--- [ ] Devuelve un listado con los profesores/as que no están asociados a un departamento.
+select d. nombre as departamento,  p.apellido1 as 1er_apellido, p.apellido2 as 2do_apellido, p.nombre as nombre from persona p, profesor pr left join departamento d on d.id = pr.id_departamento order by d.nombre asc, p.apellido1 asc, p.apellido2 asc;
+
 -- [ ] Devuelve un listado con los departamentos que no tienen profesores asociados.
+
+
 -- [ ] Devuelve un listado con los profesores/as que no imparten ninguna asignatura.
 -- [ ] Devuelve un listado con las asignaturas que no tienen un profesor/a asignado.
 -- [ ] Devuelve un listado con todos los departamentos que no han impartido asignaturas en ningún curso escolar.
